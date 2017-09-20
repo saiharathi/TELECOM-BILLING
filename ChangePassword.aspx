@@ -1,73 +1,71 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Admin/Admin.Master" CodeBehind="ChangePassword.aspx.cs" Inherits="TBSProject.Admin.ChangePassword" %>
-
-<asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <center> <asp:Label ID="Label3" runat="server"  Font-Size="XX-Large" Font-Underline="true"  Text="ChangePassword"></asp:Label></center> 
-    <asp:Table runat="server" HorizontalAlign="Center"  Height="450px" style="margin-left: 0px" Width="590px" CssClass="auto-style1">
-    
-     <asp:TableRow>
-        <asp:TableCell>
-            <asp:Label ID="Label53" runat="server" Text="Username " Font-Size="X-Large" horizantal-align="center"></asp:Label>
-            <asp:TableCell runat="server" >
-                <asp:DropDownList ID="DropDownList1" runat="server" Font-Size="X-Large" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="UserName" DataValueField="UserName" OnSelectedIndexChanged="ChangePassword_onClick"></asp:DropDownList>
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TBS1ConnectionString22 %>" SelectCommand="SELECT [UserName] FROM [UserMaster]"></asp:SqlDataSource>
-                   </asp:TableCell>
-           </asp:TableCell>
-        </asp:TableRow>
-     <asp:TableRow>
-        <asp:TableCell>
-            <asp:Label ID="Label54" runat="server" Text="Old Password " Font-Size="X-Large" ></asp:Label>
-            <asp:TableCell runat="server" >
-                <asp:Label ID="Label1" runat="server" Visible="false" Font-Size="X-Large"></asp:Label>
-            </asp:TableCell>
-               </asp:TableCell>
-        </asp:TableRow>
-     <asp:TableRow>
-        <asp:TableCell>
-            <asp:Label ID="Label56" runat="server" Text="Enter New Password " Font-Size="X-Large"></asp:Label>
-            <asp:TableCell runat="server">
-              <asp:TextBox ID="TextBox17" TextMode="Password" runat="server" Font-Size="X-Large"></asp:TextBox><br />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="TextBox17" runat="server" ErrorMessage="Field Is Manadatory"></asp:RequiredFieldValidator>
-     
-             </asp:TableCell>
-               </asp:TableCell>
-        </asp:TableRow>
-    <asp:TableRow>
-        <asp:TableCell>
-            <asp:Label ID="Label57" runat="server" Text="Confirm New Password " Font-Size="X-Large"></asp:Label>
-            <asp:TableCell runat="server" >
-              <asp:TextBox ID="TextBox18" TextMode="Password" runat="server" Font-Size="X-Large"></asp:TextBox><br />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="TextBox18" runat="server" ErrorMessage="Field is Manadatory"></asp:RequiredFieldValidator>
-               <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="TextBox18" ControlToCompare="TextBox17" ErrorMessage="Password and confirm password should Match"></asp:CompareValidator>
-              
-           </asp:TableCell>
-               </asp:TableCell>
-        </asp:TableRow>
-    <asp:TableRow>
-        <asp:TableCell>
-            <asp:Label ID="Label58" runat="server" Text="Acess Type " Font-Size="X-Large"></asp:Label>
-            <asp:TableCell runat="server">
-                <asp:Label ID="Label2" runat="server" visible="false" Font-Size="X-Large"></asp:Label>
-            </asp:TableCell>
-               </asp:TableCell>
-        </asp:TableRow>
-    <asp:TableRow>
-         <asp:TableCell >
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Backend/Backend.Master" CodeBehind="ChangePassword.aspx.cs" Inherits="TBSProject.Backend.ChangePassword" %>
+<asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">          
              
-         </asp:TableCell>
-        </asp:TableRow>
-        </asp:Table>
-      <asp:Button ID="Button2"  ForeColor="Yellow"  BackColor="Black" runat="server" Font-Size="X-Large" Text="ChangePassword" OnClick="Changepassword_onclick" CssClass="auto-style2" Width="207px" />    
-              
-</asp:Content>
+
+   
+       <center><asp:Label ID="Label1" runat="server" Text="Change Password" Font-Underline="true" Font-Size="XX-Large"></asp:Label></center>
+        <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">
+           <asp:TableRow runat="server"  Height="50">
+                    <asp:TableCell>
+                        <asp:Label ID="Label2" runat="server" Text="UserName" Font-Size="X-Large"></asp:Label>
+                          </asp:TableCell>
+                               <asp:TableCell>
+                              <asp:Label ID="Label3" runat="server"  Font-Size="X-Large" Visible="false"></asp:Label>
+                                </asp:TableCell>
+                                    </asp:TableRow>
+             <asp:TableRow runat="server"  Height="50">
+                    <asp:TableCell>
+                        <asp:Label ID="Label4" runat="server" Text="Old Password"  Font-Size="X-Large"></asp:Label>
+                          </asp:TableCell>
+                              <asp:TableCell>
+                              <asp:Label ID="Label5" runat="server"  Font-Size="X-Large" Visible="false"></asp:Label>
+                                </asp:TableCell>
+                                    </asp:TableRow>
+            <asp:TableRow runat="server"  Height="50">
+                    <asp:TableCell>
+                        <asp:Label ID="Label6" runat="server" Text="Enter New Password"  Font-Size="X-Large"></asp:Label>
+                          </asp:TableCell>
+                <asp:TableCell>
+                             <asp:TextBox ID="TextBox1" TextMode="Password"  Font-Size="X-Large" runat="server" ></asp:TextBox><br />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1"  ErrorMessage="Feid is mandatory"></asp:RequiredFieldValidator>
+                               </asp:TableCell> 
+                                    </asp:TableRow>
+               <asp:TableRow runat="server"  Height="50">
+                    <asp:TableCell>
+                        <asp:Label ID="Label7" runat="server" Text="Confirm New Password"  Font-Size="X-Large"></asp:Label>
+                          </asp:TableCell>
+                   <asp:TableCell>
+                             <asp:TextBox ID="TextBox2" TextMode="Password"  Font-Size="X-Large" runat="server"></asp:TextBox><br />
+                       <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="TextBox2"  ControlToCompare="TextBox1"  ErrorMessage="password and confirm password should be same"></asp:CompareValidator>
+                                </asp:TableCell>
+                                    </asp:TableRow>
+             <asp:TableRow runat="server"  Height="50">
+                    <asp:TableCell>
+                        <asp:Label ID="Label8" runat="server" Text="Acess Type"  Font-Size="X-Large"></asp:Label>
+                          </asp:TableCell>
+                   <asp:TableCell>
+                            <asp:Label ID="Label9" runat="server"  Font-Size="X-Large" Visible="false"></asp:Label>
+                                </asp:TableCell>
+                                    </asp:TableRow>
+            <asp:TableRow runat="server"  Height="50">
+                    <asp:TableCell>
+                        
+             </asp:TableCell>
+                                </asp:TableRow>
+
+       
+   </asp:Table>
+     <asp:Button ID="Button1"  ForeColor="Yellow"  BackColor="Black" runat="server" Text="Update" Font-Size="X-Large" OnClick="PasswordUpdate_onclick" CssClass="auto-style1" Width="141px"/>
+   </asp:Content>
+
+     
 <asp:Content ID="Content1" runat="server" contentplaceholderid="head">
     <style type="text/css">
         .auto-style1 {
-            margin-right: 16px;
-            margin-top: 20px;
-        }
-        .auto-style2 {
-            margin-left: 523px;
+            margin-left: 570px;
         }
     </style>
 </asp:Content>
 
+
+     

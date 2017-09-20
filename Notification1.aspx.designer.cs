@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TBSProject.Admin {
+namespace TBSProject.Backend {
     
     
     public partial class Notification1 {
