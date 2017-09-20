@@ -1,0 +1,67 @@
+﻿body {
+    background-image: url('../Images/back.jpg');
+     background-size: cover;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: Black;
+    overflow: hidden;
+    margin-top: 0px;
+    opacity: 0.9;
+}
+
+li {
+    float: left;
+}
+
+    li a, .dropbtn {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 25px 16px;
+        text-decoration: none;
+        width: 150px;
+        font-size: 20px;
+        font-family: Verdana;
+        transition: 0.9s;
+    }
+
+        li a:hover, .dropdown:hover .dropbtn {
+            background: lightblue;
+            color: black;
+        }
+
+    li .dropdown {
+        display: inline-block;
+    }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: Black;
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: white;
+        text-decoration: none;
+        display: block;
+    }
+
+        .dropdown-content a:hover {
+            background: yellow;
+            color: black;
+            border-radius: 0 20px 0 0;
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#heading {
+    text-align: center;
+    color: black;
+}
