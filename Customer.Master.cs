@@ -7,11 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace TBSProject.Customer
 {
-    public partial class Notifications : System.Web.UI.Page
+    public partial class Customer : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Sigout(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Login.aspx");
         }
     }
 }

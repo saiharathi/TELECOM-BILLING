@@ -1,13 +1,21 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Backend/Backend.Master" CodeBehind="Notifications.aspx.cs" Inherits="TBSProject.Backend.Notifications" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Customer/Customer.Master" CodeBehind="Notifications.aspx.cs" Inherits="TBSProject.Customer.Notifications" %>
 
-    <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <asp:Label ID="Label1" Font-Size="XX-Large" runat="server" Text="Notifications"></asp:Label>
-    <div>
-    <asp:HyperLink  ID="HyperLink1" runat="server" Font-Size="X-Large" ForeColor="Black" NavigateUrl="~/Backend/Notification1.aspx">CustomerMasterNotifications</asp:HyperLink><br />
+<asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+  
+    
 
-   
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+    <Columns>
+        <asp:BoundField DataField="ToSIMNumber" HeaderText="ToSIMNumber" SortExpression="ToSIMNumber" />
+        <asp:BoundField DataField="StartTime" HeaderText="StartTime" SortExpression="StartTime" />
+        <asp:BoundField DataField="EndTime" HeaderText="EndTime" SortExpression="EndTime" />
+        <asp:BoundField DataField="CallStatus" HeaderText="CallStatus" SortExpression="CallStatus" />
+        <asp:BoundField DataField="CallDuration" HeaderText="CallDuration" SortExpression="CallDuration" />
+        <asp:BoundField DataField="ConnectionID" HeaderText="ConnectionID" SortExpression="ConnectionID" />
+    </Columns>
+</asp:GridView>
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TBS1ConnectionString31 %>" SelectCommand="SELECT * FROM [CallMaster]"></asp:SqlDataSource>
+  
+    
 
-
-    <asp:HyperLink ID="HyperLink2" runat="server" Font-Size="X-Large" ForeColor="Black" NavigateUrl="~/Backend/Notification2.aspx">UserMasterNotifications</asp:HyperLink><br />
-         </div>
-        </asp:Content>
+    </asp:Content>
